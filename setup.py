@@ -6,20 +6,18 @@ from setuptools import setup, find_namespace_packages
 
 from setuptools.github import tools
 
-initfile = pathlib.Path(__file__).parent / "src/click/plus/__init__.py"
+initfile = pathlib.Path(__file__).parent / "src/pycombinator/__init__.py"
 version = tools.update_version(initfile, os.getenv("GITHUB_DUMP"))
 
-packages = find_namespace_packages(where="src")
-packages.remove("click")
 
 setup(
-    name="click-plus",
+    name="pycombinator",
     version=version,
-    url="https://github.com/cav71/click-plus",
-    packages=packages,
-    package_dir={"click.plus": "src/click/plus"},
-    install_requires=["click"],
-    description="collection of click extensions",
+    url="https://github.com/cav71/pycombinator",
+    packages=find_namespace_packages(where="src"),
+    package_dir={"pycombinator": "src/pycombinator"},
+    install_requires=[],
+    description="library to access news.ycombinator",
     long_description=pathlib.Path("README.rst").read_text(),
     long_description_content_type="text/x-rst",
     classifiers=[
