@@ -29,8 +29,7 @@ TBD
 Requirements
 ------------
 
-* ``Python`` >= 3.5.
-* ``click``
+* ``Python`` >= 3.6.
 
 Installation
 ------------
