@@ -4,7 +4,7 @@ import pathlib
 
 from setuptools import setup, find_namespace_packages
 
-from setuptools.github import tools
+from setuptools_github import tools
 
 initfile = pathlib.Path(__file__).parent / "src/pycombinator/__init__.py"
 version = tools.update_version(initfile, os.getenv("GITHUB_DUMP"))
@@ -16,7 +16,7 @@ setup(
     url="https://github.com/cav71/pycombinator",
     packages=find_namespace_packages(where="src"),
     package_dir={"pycombinator": "src/pycombinator"},
-    install_requires=[],
+    install_requires=["setuptools-github",],
     description="library to access news.ycombinator",
     long_description=pathlib.Path("README.rst").read_text(),
     long_description_content_type="text/x-rst",
